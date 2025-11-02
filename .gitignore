@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Environment files (may contain credentials)
+.env
+.env.*
+setenv.bat
+setenv.ps1
+application-local.properties
+*.log
