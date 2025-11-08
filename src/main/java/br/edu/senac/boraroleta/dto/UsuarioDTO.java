@@ -22,15 +22,18 @@ public class UsuarioDTO {
              message = "Telefone inválido")
     private String telefone;
 
+    private String senha;
+
     // Construtores
     public UsuarioDTO() {
     }
 
-    public UsuarioDTO(String nome, String email, String cpf, String telefone) {
+    public UsuarioDTO(String nome, String email, String cpf, String telefone, String senha) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.telefone = telefone;
+        this.senha = senha;
     }
 
     // Getters e Setters
@@ -65,4 +68,9 @@ public class UsuarioDTO {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public String getSenha() {return senha;}
+
+    public void setSenha(String senha) {this.senha = senha;}
+
 }

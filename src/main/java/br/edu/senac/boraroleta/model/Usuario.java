@@ -23,6 +23,9 @@ public class Usuario {
     @Column(length = 15)
     private String telefone;
 
+    @Column(nullable = false)
+    private String senha;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
@@ -81,6 +84,11 @@ public class Usuario {
         this.telefone = telefone;
     }
 
+    public String getSenha() {return senha;}
+
+    public void setSenha(String senha){this.senha = senha;}
+
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -89,3 +97,7 @@ public class Usuario {
         return updatedAt;
     }
 }
+
+
+
+

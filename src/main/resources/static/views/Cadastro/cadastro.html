@@ -3,26 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/Clientes/Login/Cadastro/cadastro.css">
+    <link rel="stylesheet" href="/css/Clientes/Cadastro/cadastro.css">
     <title>Cadastro</title>
 </head>
 <body>
 
 <div class="mãe">
 
-    <form  id="formCadastro" action="/usuarios/cadastro" method="POST">
-
-        <main class="container">
-
+    <form id="formCadastro">
+    <main class="container">
             <div class="titulo">
-
                 <h1>Cadastro</h1>
-
             </div>
-
             <div class="caixas">
-                <label for="name"></label>
-                <input id="name" type="text" name="name" placeholder="nome completo" required>
+                <label for="nome"></label>
+                <input id="nome" type="text" name="nome" placeholder="nome completo" required>
             </div>
 
             <div class="caixas">
@@ -31,8 +26,8 @@
             </div>
 
             <div class="caixas">
-                <label for="phone"></label>
-                <input id="phone" type="tel" name="phone" placeholder="(XX) XXXXX-XXXX" required>
+                <label for="telefone"></label>
+                <input id="telefone" type="text" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
             </div>
 
             <div class="caixas">
@@ -41,7 +36,7 @@
             </div>
 
             <div class="caixas">
-                <input id="password" type="password" name="password" placeholder="senha" required>
+                <input id="senha" type="password" name="senha" placeholder="senha" required>
             </div>
 
             <div class="caixas">
@@ -49,7 +44,7 @@
             </div>
 
             <div>
-                <button id="botao" type="submit" class="botao">Pronto?</button>
+                <button id="botao" type="submit" class="botao">Cadastrar?</button>
             </div>
 
         </main>
@@ -57,6 +52,6 @@
     </form>
 
 </div>
-<script src="/js/Clientes/ValidaCadastro.js"></script>
+<script src="/js/Clientes/Cadastro.js"> </script>
 </body>
 </html>

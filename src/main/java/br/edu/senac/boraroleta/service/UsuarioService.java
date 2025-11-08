@@ -6,6 +6,7 @@ import br.edu.senac.boraroleta.exception.EntityNotFoundException;
 import br.edu.senac.boraroleta.model.Usuario;
 import br.edu.senac.boraroleta.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +17,9 @@ public class UsuarioService {
 
     @Autowired
     private UsuarioRepository repository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Transactional(readOnly = true)
     public List<Usuario> listarTodos() {
@@ -52,8 +56,13 @@ public class UsuarioService {
         usuario.setCpf(dto.getCpf());
         usuario.setTelefone(dto.getTelefone());
 
+        String senhaCriptografada = passwordEncoder.encode(dto.getSenha());
+        usuario.setSenha(senhaCriptografada);
+
         return repository.save(usuario);
+
     }
+
 
     @Transactional
     public Usuario atualizar(Long id, UsuarioDTO dto) {
@@ -73,6 +82,11 @@ public class UsuarioService {
         usuario.setEmail(dto.getEmail());
         usuario.setCpf(dto.getCpf());
         usuario.setTelefone(dto.getTelefone());
+
+        if(dto.getSenha() != null && !dto.getSenha().isBlank()){
+            String senhaCriptografada =  passwordEncoder.encode(dto.getSenha());
+            usuario.setSenha(senhaCriptografada);
+        }
 
         return repository.save(usuario);
     }
